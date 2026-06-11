@@ -4,36 +4,78 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Interactive 3D Mockup Tilt Parallax (Desktop Only)
+    // 1. Interactive 3D Mockup Tilt Parallax (Desktop Mouse, Mobile Touch & Gyroscope)
     const phoneFrame = document.querySelector('.phone-frame');
     const consolePane = document.querySelector('.console-pane');
 
     if (phoneFrame && consolePane) {
+        // Desktop Mouse Move handler
         consolePane.addEventListener('mousemove', (e) => {
-            // Only execute tilt on desktop layouts
             if (window.innerWidth <= 1024) return;
 
             const rect = consolePane.getBoundingClientRect();
-            
-            // Get cursor coordinates relative to center of the panel
             const width = rect.width;
             const height = rect.height;
             const x = e.clientX - rect.left - (width / 2);
             const y = e.clientY - rect.top - (height / 2);
 
-            // Translate into degree tilts (max 15 degrees)
             const maxTilt = 15;
             const rotateY = (x / (width / 2)) * maxTilt;
             const rotateX = -(y / (height / 2)) * maxTilt;
 
-            // Apply hardware-accelerated 3D transforms
             phoneFrame.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translate3d(0, 0, 20px)`;
         }, { passive: true });
 
-        // Reset phone mockup coordinates when mouse leaves the console area
         consolePane.addEventListener('mouseleave', () => {
-            phoneFrame.style.transform = 'rotateX(0deg) rotateY(0deg) translate3d(0, 0, 0)';
+            if (window.innerWidth > 1024) {
+                phoneFrame.style.transform = 'rotateX(0deg) rotateY(0deg) translate3d(0, 0, 0)';
+            }
         });
+
+        // Mobile Touch Move handler (alternative touch tilt control)
+        consolePane.addEventListener('touchmove', (e) => {
+            if (window.innerWidth > 1024) return;
+            const touch = e.touches[0];
+            const rect = consolePane.getBoundingClientRect();
+            const width = rect.width;
+            const height = rect.height;
+            const x = touch.clientX - rect.left - (width / 2);
+            const y = touch.clientY - rect.top - (height / 2);
+
+            const maxTilt = 12;
+            const rotateY = (x / (width / 2)) * maxTilt;
+            const rotateX = -(y / (height / 2)) * maxTilt;
+
+            phoneFrame.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translate3d(0, 0, 20px)`;
+        }, { passive: true });
+
+        // Reset on touch end
+        consolePane.addEventListener('touchend', () => {
+            if (window.innerWidth <= 1024) {
+                setTimeout(() => {
+                    phoneFrame.style.transform = 'rotateX(0deg) rotateY(0deg) translate3d(0, 0, 0)';
+                }, 300);
+            }
+        });
+
+        // Gyroscope / Device Accelerometer Tilt handler
+        window.addEventListener('deviceorientation', (e) => {
+            if (window.innerWidth > 1024) return;
+
+            const beta = e.beta;  // Front-back tilt (-180 to 180 deg)
+            const gamma = e.gamma; // Left-right tilt (-90 to 90 deg)
+
+            if (beta !== null && gamma !== null) {
+                const targetPitch = 45; 
+                const pitchDiff = beta - targetPitch;
+
+                const maxTilt = 15;
+                const rotateX = Math.max(Math.min(pitchDiff / 2.5, maxTilt), -maxTilt);
+                const rotateY = Math.max(Math.min(gamma / 2.5, maxTilt), -maxTilt);
+
+                phoneFrame.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translate3d(0, 0, 20px)`;
+            }
+        }, true);
     }
 
     // 2. Scroll-Synchronized App Mockup Screens
