@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeStream — High-Fidelity Music Sanctuary</title>
+    <!-- Favicon App Logo -->
+    <link rel="icon" type="image/webp" href="images/logo.webp">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Hardware-Accelerated background glows (forced static GPU layouts) -->
+    <div class="blob blob-pink"></div>
+    <div class="blob blob-purple"></div>
+    <div class="blob blob-blue"></div>
+
+    <!-- Main Split Layout Container -->
+    <div class="split-container">
+        
+        <!-- ==========================================
+             LEFT PANEL — Fixed Dashboard & Interactive Mockup
+             ========================================== -->
+        <aside class="console-pane">
+            <div class="logo-wrapper">
+                <a href="#" class="logo">
+                    <img src="images/logo.webp" alt="VibeStream Logo" class="logo-img">
+                    Vibe<span>Stream</span>
+                </a>
+            </div>
+
+            <!-- Parallax Mockup Frame Wrapper -->
+            <div class="parallax-wrapper">
+                <div class="phone-frame shadow-glow">
+                    <div class="phone-notch"></div>
+                    <div class="phone-reflection"></div>
+                    
+                    <!-- App Internal Mock Screen -->
+                    <div class="screenshot-mock player-mock">
+                        <div class="mock-header">
+                            <span class="mock-sub-title">Sanctuary Live</span>
+                            <div class="live-pulse-indicator">
+                                <span class="pulse-dot"></span>
+                                <span class="active-mode-label">Waveform</span>
+                            </div>
+                        </div>
+
+                        <!-- Art / Visualizer Display screen -->
+                        <div class="visualizer-display">
+                            <!-- Visualizer Overlay Modes -->
+                            
+                            <!-- 1. Waveform Mode -->
+                            <div class="visual-mode mode-waveform active">
+                                <div class="waveform-bars">
+                                    <div class="bar bar-1"></div>
+                                    <div class="bar bar-2"></div>
+                                    <div class="bar bar-3"></div>
+                                    <div class="bar bar-4"></div>
+                                    <div class="bar bar-5"></div>
+                                    <div class="bar bar-6"></div>
+                                    <div class="bar bar-7"></div>
+                                    <div class="bar bar-8"></div>
+                                    <div class="bar bar-9"></div>
+                                    <div class="bar bar-10"></div>
+                                </div>
+                            </div>
+
+                            <!-- 2. Spectrum Mode -->
+                            <div class="visual-mode mode-spectrum">
+                                <div class="spectrum-cols">
+                                    <div class="col col-1"></div>
+                                    <div class="col col-2"></div>
+                                    <div class="col col-3"></div>
+                                    <div class="col col-4"></div>
+                                    <div class="col col-5"></div>
+                                    <div class="col col-6"></div>
+                                    <div class="col col-7"></div>
+                                    <div class="col col-8"></div>
+                                </div>
+                            </div>
+
+                            <!-- 3. Circle Blast Mode -->
+                            <div class="visual-mode mode-circle">
+                                <div class="circle-blast">
+                                    <div class="ring ring-1"></div>
+                                    <div class="ring ring-2"></div>
+                                    <div class="ring ring-3"></div>
+                                    <div class="ring-core"><i class="fa-solid fa-music"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Metadata details -->
+                        <div class="mock-track-details">
+                            <h4 class="mock-title">Lost In The Sound</h4>
+                            <p class="mock-artist">Chloe & The Sanctuary</p>
+                        </div>
+
+                        <div class="mock-progress-bar">
+                            <div class="mock-progress-track">
+                                <div class="mock-progress-fill"></div>
+                            </div>
+                            <div class="mock-times">
+                                <span>1:42</span>
+                                <span>3:50</span>
+                            </div>
+                        </div>
+
+                        <!-- Player Controls -->
+                        <div class="mock-controls">
+                            <i class="fa-solid fa-shuffle mock-btn"></i>
+                            <i class="fa-solid fa-backward mock-btn"></i>
+                            <div class="mock-play-circle"><i class="fa-solid fa-pause"></i></div>
+                            <i class="fa-solid fa-forward mock-btn"></i>
+                            <i class="fa-solid fa-repeat mock-btn"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="console-footer">
+                <span class="console-tag">Interactive Preview — Move your cursor to tilt</span>
+            </div>
+        </aside>
+
+        <!-- ==========================================
+             RIGHT PANEL — Independently Scrolling Content
+             ========================================== -->
+        <main class="content-pane">
+            
+            <!-- 1. Hero Content -->
+            <section class="section hero-slide" id="hero">
+                <div class="slide-body">
+                    <div class="badge animate-slide-up">
+                        <i class="fa-solid fa-bolt"></i> VibeStream v2.1.0 Released
+                    </div>
+                    <h1 class="hero-title animate-slide-up">
+                        Your High-Fidelity <br>
+                        <span class="text-gradient">Music Sanctuary</span>
+                    </h1>
+                    <p class="hero-subtitle animate-slide-up">
+                        Stream any track ad-free, download lossless audio for offline use, synchronize your music library across devices instantly, and enjoy fluid Jetpack Compose layouts.
+                    </p>
+                    <div class="hero-actions animate-slide-up">
+                        <a href="app-debug.apk" class="btn btn-primary btn-lg download-btn" download>
+                            <i class="fa-solid fa-download"></i> Download Android APK
+                        </a>
+                        <a href="#features" class="btn btn-outline btn-lg">
+                            Explore Features
+                        </a>
+                    </div>
+                    <div class="hero-info-pills animate-slide-up">
+                        <span class="info-pill"><i class="fa-brands fa-android"></i> Android 8.0+</span>
+                        <span class="info-pill"><i class="fa-solid fa-shield-halved"></i> Ad-Free & Free</span>
+                        <span class="info-pill"><i class="fa-solid fa-cloud"></i> Firebase Sync</span>
+                    </div>
+                    <div class="scroll-down-indicator animate-slide-up">
+                        <span>Scroll down to interact</span>
+                        <i class="fa-solid fa-chevron-down bounce"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Feature Timeline slides -->
+            <div id="features">
+                
+                <!-- Feature 1: Lossless Downloads -->
+                <section class="section feature-slide" id="feat-download" data-visualizer="waveform">
+                    <div class="slide-body reveal-slide-up">
+                        <div class="feature-tag purple-glow"><i class="fa-solid fa-download"></i> Downloads</div>
+                        <h2>Lossless Offline Caching</h2>
+                        <p>Save high-quality MP3s directly to your local internal storage directory for offline playback. VibeStream features direct stream query redirects: if a primary stream fails, fallbacks are loaded immediately to ensure your download finishes.</p>
+                        <ul class="feature-checklist">
+                            <li><i class="fa-solid fa-circle-check"></i> High-quality audio extraction</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Smart piped fallback resolvers</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Deletes cached files completely on logout</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Feature 2: Ad-Free YouTube Engine -->
+                <section class="section feature-slide" id="feat-ads" data-visualizer="spectrum">
+                    <div class="slide-body reveal-slide-up">
+                        <div class="feature-tag pink-glow"><i class="fa-solid fa-ban"></i> Ad-Free</div>
+                        <h2>100% Ad-Block Streaming</h2>
+                        <p>Client-side background WebView overrides intercept video and audio advertisements, fast-forwarding ads at 16x speed and muting them automatically. Enjoy pure, uninterrupted listening without subscriptions.</p>
+                        <ul class="feature-checklist">
+                            <li><i class="fa-solid fa-circle-check"></i> 16x speed fast-forwarding & muting</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Background visibility state patches</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Seamless background WebView playback</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Feature 3: Smart Autoplay -->
+                <section class="section feature-slide" id="feat-autoplay" data-visualizer="circle">
+                    <div class="slide-body reveal-slide-up">
+                        <div class="feature-tag blue-glow"><i class="fa-solid fa-shuffle"></i> Autoplay</div>
+                        <h2>Smart Autoplay Queue</h2>
+                        <p>Never hear silence. VibeStream analyzes your currently playing track, searches live public Invidious instance registries, and automatically populates the "Up Next" queue before the active track concludes.</p>
+                        <ul class="feature-checklist">
+                            <li><i class="fa-solid fa-circle-check"></i> Automatic recommendation fetches</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Live public instance fallbacks</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Flawless crossfade transition flow</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Feature 4: Cloud Library Sync -->
+                <section class="section feature-slide" id="feat-sync" data-visualizer="waveform">
+                    <div class="slide-body reveal-slide-up">
+                        <div class="feature-tag green-glow"><i class="fa-solid fa-cloud-arrow-up"></i> Cloud Sync</div>
+                        <h2>Continuous Firebase Backup</h2>
+                        <p>Your library is saved online in real-time. Any modification to custom playlists, favorites lists, settings, or search history is synchronized to your Firebase Realtime Database path `/users/$uid`.</p>
+                        <ul class="feature-checklist">
+                            <li><i class="fa-solid fa-circle-check"></i> Syncs on every modification</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Bypasses onboarding screens on returning logins</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Restores favorites, playlists, and settings instantly</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Feature 5: Visualizers & Customization -->
+                <section class="section feature-slide" id="feat-visualizers" data-visualizer="spectrum">
+                    <div class="slide-body reveal-slide-up">
+                        <div class="feature-tag yellow-glow"><i class="fa-solid fa-sliders"></i> Customization</div>
+                        <h2>Responsive Waveforms</h2>
+                        <p>Cycle between three customized, reactive visualizers built in Jetpack Compose to fit your style: Classic Waveform, Linear Spectrum, or Circle Blast. Configure sleep timers to fade audio as you drift off.</p>
+                        <ul class="feature-checklist">
+                            <li><i class="fa-solid fa-circle-check"></i> 3 reactive visualizer styles</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Gradual audio fade sleep timers</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Fluid glassmorphic controls</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 3. Feedback Card section -->
+            <section class="section feedback-slide" id="feedback">
+                <div class="slide-body reveal-slide-up">
+                    <div class="feedback-layout glass-card">
+                        <div class="feedback-header">
+                            <h2>Shape The <span class="text-gradient">Sanctuary</span></h2>
+                            <p>Found a bug? Have an idea for a creative animation? Want a new visualizer style? Submit your feedback directly to the development backlog. We read and implement user suggestions weekly!</p>
+                            
+                            <div class="stats-row">
+                                <div class="stat-box">
+                                    <span class="stat-val">100%</span>
+                                    <span class="stat-lbl">Open Source</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-val">24h</span>
+                                    <span class="stat-lbl">Avg. Response</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form id="feedback-form" class="feedback-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="fb-name">Your Name</label>
+                                    <input type="text" id="fb-name" required placeholder="Enter name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="fb-email">Email Address</label>
+                                    <input type="email" id="fb-email" required placeholder="name@domain.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="fb-type">Feedback Type</label>
+                                <select id="fb-type">
+                                    <option value="Feature Request">💡 Feature Request</option>
+                                    <option value="Bug Report">🐛 Bug Report</option>
+                                    <option value="Animation Idea">🎨 Motion & Design Idea</option>
+                                    <option value="Other">💬 General Message</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fb-message">Message</label>
+                                <textarea id="fb-message" rows="4" required placeholder="What should we add or fix next? Describe your thoughts..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <span class="btn-text">Submit Backlog Request</span>
+                                <i class="fa-solid fa-paper-plane btn-icon"></i>
+                            </button>
+
+                            <!-- Status Messages -->
+                            <div class="form-status success-msg">
+                                <i class="fa-solid fa-circle-check"></i> Written to backlog database successfully.
+                            </div>
+                            <div class="form-status error-msg">
+                                <i class="fa-solid fa-circle-exclamation"></i> Error sending feedback. Check connection.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Footer -->
+            <footer class="footer">
+                <div class="footer-grid">
+                    <p>&copy; 2026 VibeStream. Made for audiophiles, built completely for free on Firebase.</p>
+                    <div class="footer-links">
+                        <a href="https://github.com/keshu/vibestream" target="_blank">Repository</a>
+                        <a href="#features">Features</a>
+                        <a href="#feedback">Support Backlog</a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="app.js"></script>
+</body>
+</html>
