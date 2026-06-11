@@ -47,85 +47,13 @@
                     <div class="phone-notch"></div>
                     <div class="phone-reflection"></div>
                     
-                    <!-- App Internal Mock Screen -->
-                    <div class="screenshot-mock player-mock">
-                        <div class="mock-header">
-                            <span class="mock-sub-title">Sanctuary Live</span>
-                            <div class="live-pulse-indicator">
-                                <span class="pulse-dot"></span>
-                                <span class="active-mode-label">Waveform</span>
-                            </div>
-                        </div>
-
-                        <!-- Art / Visualizer Display screen -->
-                        <div class="visualizer-display">
-                            <!-- Visualizer Overlay Modes -->
-                            
-                            <!-- 1. Waveform Mode -->
-                            <div class="visual-mode mode-waveform active">
-                                <div class="waveform-bars">
-                                    <div class="bar bar-1"></div>
-                                    <div class="bar bar-2"></div>
-                                    <div class="bar bar-3"></div>
-                                    <div class="bar bar-4"></div>
-                                    <div class="bar bar-5"></div>
-                                    <div class="bar bar-6"></div>
-                                    <div class="bar bar-7"></div>
-                                    <div class="bar bar-8"></div>
-                                    <div class="bar bar-9"></div>
-                                    <div class="bar bar-10"></div>
-                                </div>
-                            </div>
-
-                            <!-- 2. Spectrum Mode -->
-                            <div class="visual-mode mode-spectrum">
-                                <div class="spectrum-cols">
-                                    <div class="col col-1"></div>
-                                    <div class="col col-2"></div>
-                                    <div class="col col-3"></div>
-                                    <div class="col col-4"></div>
-                                    <div class="col col-5"></div>
-                                    <div class="col col-6"></div>
-                                    <div class="col col-7"></div>
-                                    <div class="col col-8"></div>
-                                </div>
-                            </div>
-
-                            <!-- 3. Circle Blast Mode -->
-                            <div class="visual-mode mode-circle">
-                                <div class="circle-blast">
-                                    <div class="ring ring-1"></div>
-                                    <div class="ring ring-2"></div>
-                                    <div class="ring ring-3"></div>
-                                    <div class="ring-core"><i class="fa-solid fa-music"></i></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Metadata details -->
-                        <div class="mock-track-details">
-                            <h4 class="mock-title">Lost In The Sound</h4>
-                            <p class="mock-artist">Chloe & The Sanctuary</p>
-                        </div>
-
-                        <div class="mock-progress-bar">
-                            <div class="mock-progress-track">
-                                <div class="mock-progress-fill"></div>
-                            </div>
-                            <div class="mock-times">
-                                <span>1:42</span>
-                                <span>3:50</span>
-                            </div>
-                        </div>
-
-                        <!-- Player Controls -->
-                        <div class="mock-controls">
-                            <i class="fa-solid fa-shuffle mock-btn"></i>
-                            <i class="fa-solid fa-backward mock-btn"></i>
-                            <div class="mock-play-circle"><i class="fa-solid fa-pause"></i></div>
-                            <i class="fa-solid fa-forward mock-btn"></i>
-                            <i class="fa-solid fa-repeat mock-btn"></i>
-                        </div>
+                    <!-- App Internal Real Screen Display -->
+                    <div class="phone-screens">
+                        <img src="images/screen_home.png" alt="Home Screen" class="phone-screen active" data-screen="home">
+                        <img src="images/screen_library.png" alt="Library Screen" class="phone-screen" data-screen="library">
+                        <img src="images/screen_search.png" alt="Search Screen" class="phone-screen" data-screen="search">
+                        <img src="images/screen_player.png" alt="Player Screen" class="phone-screen" data-screen="player">
+                        <img src="images/screen_settings.png" alt="Settings Screen" class="phone-screen" data-screen="settings">
                     </div>
                 </div>
             </div>
@@ -141,7 +69,7 @@
         <main class="content-pane">
             
             <!-- 1. Hero Content -->
-            <section class="section hero-slide" id="hero">
+            <section class="section hero-slide scroll-sync-slide" id="hero" data-screen="home">
                 <div class="slide-body">
                     <div class="badge animate-slide-up">
                         <i class="fa-solid fa-bolt"></i> VibeStream v2.1.0 Released
@@ -177,7 +105,7 @@
             <div id="features">
                 
                 <!-- Feature 1: Lossless Downloads -->
-                <section class="section feature-slide" id="feat-download" data-visualizer="waveform">
+                <section class="section feature-slide scroll-sync-slide" id="feat-download" data-screen="library">
                     <div class="slide-body reveal-slide-up">
                         <div class="feature-tag purple-glow"><i class="fa-solid fa-download"></i> Downloads</div>
                         <h2>Lossless Offline Caching</h2>
@@ -191,7 +119,7 @@
                 </section>
 
                 <!-- Feature 2: Ad-Free YouTube Engine -->
-                <section class="section feature-slide" id="feat-ads" data-visualizer="spectrum">
+                <section class="section feature-slide scroll-sync-slide" id="feat-ads" data-screen="search">
                     <div class="slide-body reveal-slide-up">
                         <div class="feature-tag pink-glow"><i class="fa-solid fa-ban"></i> Ad-Free</div>
                         <h2>100% Ad-Block Streaming</h2>
@@ -205,7 +133,7 @@
                 </section>
 
                 <!-- Feature 3: Smart Autoplay -->
-                <section class="section feature-slide" id="feat-autoplay" data-visualizer="circle">
+                <section class="section feature-slide scroll-sync-slide" id="feat-autoplay" data-screen="player">
                     <div class="slide-body reveal-slide-up">
                         <div class="feature-tag blue-glow"><i class="fa-solid fa-shuffle"></i> Autoplay</div>
                         <h2>Smart Autoplay Queue</h2>
@@ -219,7 +147,7 @@
                 </section>
 
                 <!-- Feature 4: Cloud Library Sync -->
-                <section class="section feature-slide" id="feat-sync" data-visualizer="waveform">
+                <section class="section feature-slide scroll-sync-slide" id="feat-sync" data-screen="settings">
                     <div class="slide-body reveal-slide-up">
                         <div class="feature-tag green-glow"><i class="fa-solid fa-cloud-arrow-up"></i> Cloud Sync</div>
                         <h2>Continuous Firebase Backup</h2>
@@ -233,7 +161,7 @@
                 </section>
 
                 <!-- Feature 5: Visualizers & Customization -->
-                <section class="section feature-slide" id="feat-visualizers" data-visualizer="spectrum">
+                <section class="section feature-slide scroll-sync-slide" id="feat-visualizers" data-screen="player">
                     <div class="slide-body reveal-slide-up">
                         <div class="feature-tag yellow-glow"><i class="fa-solid fa-sliders"></i> Customization</div>
                         <h2>Responsive Waveforms</h2>
@@ -248,7 +176,7 @@
             </div>
 
             <!-- 3. Feedback Card section -->
-            <section class="section feedback-slide" id="feedback">
+            <section class="section feedback-slide scroll-sync-slide" id="feedback" data-screen="home">
                 <div class="slide-body reveal-slide-up">
                     <div class="feedback-layout glass-card">
                         <div class="feedback-header">

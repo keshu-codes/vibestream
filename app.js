@@ -78,37 +78,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }, true);
     }
 
-    // 2. Scroll-Synchronized App Mockup Screens
-    const featureSlides = document.querySelectorAll('.feature-slide');
-    const activeModeLabel = document.querySelector('.active-mode-label');
-    const visualModes = document.querySelectorAll('.visual-mode');
+    // 2. Scroll-Synchronized App Screenshot Transitions
+    const syncSlides = document.querySelectorAll('.scroll-sync-slide');
+    const phoneScreens = document.querySelectorAll('.phone-screen');
+    const consoleTag = document.querySelector('.console-tag');
 
-    if (featureSlides.length > 0 && activeModeLabel) {
+    if (syncSlides.length > 0 && phoneScreens.length > 0) {
         const syncObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                // Trigger sync when card is at least 30% visible in the viewport
                 if (entry.isIntersecting) {
-                    const visualType = entry.target.getAttribute('data-visualizer');
+                    const screenName = entry.target.getAttribute('data-screen');
                     
-                    // 1. Remove active state from all mockup screens
-                    visualModes.forEach(mode => mode.classList.remove('active'));
+                    // 1. Fade out all screens, fade in target screen
+                    phoneScreens.forEach(screen => {
+                        if (screen.getAttribute('data-screen') === screenName) {
+                            screen.classList.add('active');
+                        } else {
+                            screen.classList.remove('active');
+                        }
+                    });
 
-                    // 2. Activate target mockup screen
-                    const targetModeDiv = document.querySelector(`.mode-${visualType}`);
-                    if (targetModeDiv) {
-                        targetModeDiv.classList.add('active');
+                    // 2. Update status indicator label
+                    if (consoleTag) {
+                        switch (screenName) {
+                            case 'home':
+                                consoleTag.textContent = 'Active Screen — App Dashboard Home';
+                                break;
+                            case 'search':
+                                consoleTag.textContent = 'Active Screen — Streaming Explore Feed';
+                                break;
+                            case 'library':
+                                consoleTag.textContent = 'Active Screen — Lossless Offline Downloads';
+                                break;
+                            case 'player':
+                                consoleTag.textContent = 'Active Screen — High-Fi Waveform Player';
+                                break;
+                            case 'settings':
+                                consoleTag.textContent = 'Active Screen — Account & Cloud Sync';
+                                break;
+                            default:
+                                consoleTag.textContent = 'Interactive Console — Move cursor to tilt';
+                        }
                     }
-
-                    // 3. Update status indicator label
-                    activeModeLabel.textContent = visualType.charAt(0).toUpperCase() + visualType.slice(1);
                 }
             });
         }, {
-            threshold: 0.35, // Trigger state shifts when card crosses center thresholds
-            rootMargin: '-10% 0px -10% 0px'
+            threshold: 0.25, // Trigger state shifts when card enters the viewport
+            rootMargin: '-5% 0px -5% 0px'
         });
 
-        featureSlides.forEach(slide => {
+        syncSlides.forEach(slide => {
             syncObserver.observe(slide);
         });
     }
