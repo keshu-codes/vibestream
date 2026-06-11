@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+  <!-- Rounded Squircle Background (representing a premium Android app icon shape) -->
+  <rect width="108" height="108" rx="22" fill="#0F111A"/>
+  
+  <!-- Neon Glow Path (Semi-transparent purple) -->
+  <path
+    d="M 14,54 L 34,54 L 44.4,26 L 55.6,82 L 66,46 L 76.4,58 L 94,54"
+    fill="none"
+    stroke="#9E92EC"
+    stroke-opacity="0.2"
+    stroke-width="14"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+    
+  <!-- Core Pulse Path (Bright Cyan) -->
+  <path
+    d="M 14,54 L 34,54 L 44.4,26 L 55.6,82 L 66,46 L 76.4,58 L 94,54"
+    fill="none"
+    stroke="#80DEEA"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+</svg>
