@@ -8,8 +8,9 @@
   <link rel="apple-touch-icon" href="images/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
   <style>
     /* =============================================
        TOKENS
@@ -738,6 +739,7 @@
        RESPONSIVE
     ============================================= */
     @media (max-width: 1024px) {
+      #cursor, #cursor-ring { display: none !important; }
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-left { padding: 120px 40px 60px; }
       .hero-right { padding: 40px; min-height: 600px; }
@@ -754,14 +756,27 @@
       .footer-inner { flex-direction: column; text-align: center; }
     }
     @media (max-width: 640px) {
-      .hero-left { padding: 100px 24px 48px; }
-      .hero-right { padding: 24px; }
-      .hero-actions { flex-direction: column; }
-      .btn { width: 100%; justify-content: center; }
-      .features { padding: 60px 24px; }
-      .how { padding: 40px 24px 60px; }
-      .feedback { padding: 40px 24px 60px; }
-      footer { padding: 32px 24px; }
+      nav { padding: 12px 16px !important; }
+      .nav-brand { font-size: 1rem; }
+      .nav-brand img { width: 24px; height: 24px; }
+      .nav-cta { padding: 8px 14px; font-size: 0px; }
+      .nav-cta i { font-size: 0.85rem; margin-right: 0; }
+      
+      .hero-left { padding: 100px 16px 36px; align-items: center; text-align: center; }
+      .hero-eyebrow { margin: 0 auto 24px; }
+      .hero-title { font-size: clamp(2rem, 8vw, 2.8rem) !important; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-actions { width: 100%; justify-content: center; gap: 12px; }
+      .hero-pills { justify-content: center; }
+      
+      .hero-right { padding: 16px 0; min-height: 480px; }
+      .phone-wrap { transform: scale(0.85); transform-origin: center center; }
+      .screen-label { bottom: -28px; }
+      
+      .features { padding: 60px 16px; }
+      .how { padding: 40px 16px 60px; }
+      .feedback { padding: 40px 16px 60px; }
+      footer { padding: 32px 16px; }
       .float-badge { display: none; }
     }
   </style>
@@ -872,11 +887,11 @@
         <div class="phone" id="heroPhone">
           <div class="phone-notch"></div>
           <div class="phone-inner">
-            <img src="images/screen_home.png"     class="screen active" data-screen="home"     alt="Home">
-            <img src="images/screen_library.png"  class="screen"       data-screen="library"  alt="Library">
-            <img src="images/screen_search.png"   class="screen"       data-screen="search"   alt="Search">
-            <img src="images/screen_player.png"   class="screen"       data-screen="player"   alt="Player">
-            <img src="images/screen_settings.png" class="screen"       data-screen="settings" alt="Settings">
+            <img src="images/screen_home.webp"     class="screen active" data-screen="home"     alt="Home">
+            <img src="images/screen_library.webp"  class="screen"       data-screen="library"  alt="Library">
+            <img src="images/screen_search.webp"   class="screen"       data-screen="search"   alt="Search">
+            <img src="images/screen_player.webp"   class="screen"       data-screen="player"   alt="Player">
+            <img src="images/screen_settings.webp" class="screen"       data-screen="settings" alt="Settings">
           </div>
         </div>
 
@@ -944,7 +959,7 @@
         <div class="feat-phone">
           <div class="feat-phone-inner">
             <div class="feat-phone-screen">
-              <img src="images/screen_library.png" alt="Library Screen">
+              <img src="images/screen_library.webp" alt="Library Screen">
             </div>
           </div>
         </div>
@@ -981,7 +996,7 @@
         <div class="feat-phone">
           <div class="feat-phone-inner">
             <div class="feat-phone-screen">
-              <img src="images/screen_settings.png" alt="Settings Screen">
+              <img src="images/screen_settings.webp" alt="Settings Screen">
             </div>
           </div>
         </div>
