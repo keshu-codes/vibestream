@@ -163,11 +163,7 @@
       box-shadow: 0 4px 20px rgba(177,78,255,.3);
     }
     .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,45,149,.4); }
-    @media (max-width: 768px) {
-      nav { padding: 16px 24px; }
-      nav.scrolled { padding: 12px 24px; }
-      .nav-links { display: none; }
-    }
+    /* Merged with unified 768px media query at the bottom */
 
     /* =============================================
        HERO
@@ -755,16 +751,19 @@
       footer { padding: 40px; }
       .footer-inner { flex-direction: column; text-align: center; }
     }
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
       nav { padding: 12px 16px !important; }
+      nav.scrolled { padding: 10px 16px !important; }
+      .nav-links { display: none !important; }
       .nav-brand { font-size: 1rem; }
       .nav-brand img { width: 24px; height: 24px; }
-      .nav-cta { padding: 8px 14px; font-size: 0px; }
-      .nav-cta i { font-size: 0.85rem; margin-right: 0; }
+      .nav-cta { padding: 8px 14px; font-size: 0px !important; }
+      .nav-cta i { font-size: 0.85rem !important; margin-right: 0 !important; }
       
       .hero-left { padding: 100px 16px 36px; align-items: center; text-align: center; }
       .hero-eyebrow { margin: 0 auto 24px; }
-      .hero-title { font-size: clamp(2rem, 8vw, 2.8rem) !important; }
+      .hero-title { font-size: clamp(1.5rem, 7.5vw, 2.4rem) !important; overflow: visible !important; }
+      .hero-title .line { overflow: visible !important; }
       .hero-sub { margin-left: auto; margin-right: auto; }
       .hero-actions { width: 100%; justify-content: center; gap: 12px; }
       .hero-pills { justify-content: center; }
@@ -777,7 +776,7 @@
       .how { padding: 40px 16px 60px; }
       .feedback { padding: 40px 16px 60px; }
       footer { padding: 32px 16px; }
-      .float-badge { display: none; }
+      .float-badge { display: none !important; }
     }
   </style>
 </head>
