@@ -231,6 +231,7 @@
       -webkit-background-clip: text; background-clip: text; color: transparent;
       background-size: 200% 200%;
       animation: gradShift 5s ease infinite;
+      padding-right: 0.08em; /* Prevent browser text-clip cut-offs on wide slanted fonts */
     }
     @keyframes gradShift {
       0%, 100% { background-position: 0% 50%; }
@@ -766,7 +767,8 @@
       .hero-title .line { overflow: visible !important; }
       .hero-sub { margin-left: auto; margin-right: auto; }
       .hero-actions { width: 100%; justify-content: center; gap: 12px; }
-      .hero-pills { justify-content: center; }
+      .hero-pills { justify-content: center; gap: 6px !important; max-width: 340px; margin: 0 auto; }
+      .pill { font-size: 0.72rem !important; padding: 5px 10px !important; }
       
       .hero-right { padding: 16px 0; min-height: 480px; }
       .phone-wrap { transform: scale(0.85); transform-origin: center center; }
@@ -979,7 +981,7 @@
 
       <!-- Card 3 -->
       <div class="feat-card" data-reveal>
-        <div class="feat-icon feat-icon-purple"><i class="fa-solid fa-waveform"></i></div>
+        <div class="feat-icon feat-icon-purple"><i class="fa-solid fa-shuffle"></i></div>
         <div class="feat-tag feat-tag-purple">Smart Queue</div>
         <h3>Never Stop<br>The Flow.</h3>
         <p>Intelligent autoplay analyzes your current track and pre-fetches recommendations before the song ends. Crossfade transitions between every track.</p>
