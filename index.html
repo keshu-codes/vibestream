@@ -189,7 +189,7 @@
 
     .hero-left {
       display: flex; flex-direction: column; justify-content: center;
-      padding: 60px 60px 80px 64px;
+      padding: 60px clamp(24px, 4vw, 60px) 80px clamp(32px, 5vw, 64px);
       position: relative; z-index: 2;
       min-width: 0;
     }
@@ -219,7 +219,7 @@
 
     .hero-title {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(3rem, 5vw, 5.2rem);
+      font-size: clamp(2.5rem, 3.6vw, 4.5rem);
       font-weight: 800;
       line-height: 1.0;
       letter-spacing: -0.04em;
