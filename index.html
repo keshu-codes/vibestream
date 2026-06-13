@@ -747,18 +747,55 @@
     @media (max-width: 1024px) {
       #cursor, #cursor-ring { display: none !important; }
       .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-left { padding: 120px 40px 60px; }
-      .hero-right { padding: 40px; min-height: 600px; }
-      .features { padding: 80px 40px; }
+      .hero-left { 
+        padding: 100px 20px 40px !important; 
+        align-items: center !important; 
+        text-align: center !important; 
+      }
+      .hero-eyebrow { margin: 0 auto 24px !important; }
+      .hero-title { 
+        font-size: clamp(1.8rem, 6.5vw, 3rem) !important; 
+        overflow: visible !important; 
+      }
+      .hero-title .line { overflow: visible !important; }
+      .hero-sub { 
+        margin-left: auto !important; 
+        margin-right: auto !important; 
+        text-align: center !important;
+        font-size: 1rem !important;
+      }
+      .hero-actions { 
+        width: 100% !important; 
+        justify-content: center !important; 
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important; 
+      }
+      .hero-actions .btn {
+        width: 100% !important;
+        max-width: 320px;
+      }
+      .hero-pills { 
+        justify-content: center !important; 
+        gap: 8px !important; 
+        max-width: 440px; 
+        margin: 0 auto !important; 
+      }
+      .pill { font-size: 0.75rem !important; padding: 5px 12px !important; }
+      
+      .hero-right { padding: 40px 0; min-height: 500px; }
+      .phone-wrap { transform: scale(0.9); transform-origin: center center; }
+      
+      .features { padding: 80px 20px; }
       .features-grid { grid-template-columns: 1fr; }
       .feat-card-large { grid-column: span 1; grid-template-columns: 1fr; }
       .feat-phone { display: none; }
-      .how { padding: 60px 40px 80px; }
+      .how { padding: 60px 20px 80px; }
       .steps { grid-template-columns: 1fr; }
-      .feedback { padding: 60px 40px 80px; }
-      .feedback-inner { padding: 40px 28px; }
+      .feedback { padding: 60px 20px 80px; }
+      .feedback-inner { padding: 40px 20px; }
       .f-row { grid-template-columns: 1fr; }
-      footer { padding: 40px; }
+      footer { padding: 40px 20px; }
       .footer-inner { flex-direction: column; text-align: center; }
     }
     @media (max-width: 768px) {
@@ -830,7 +867,7 @@
     <div class="hero-left">
       <div class="hero-eyebrow">
         <div class="eyebrow-dot"></div>
-        <span>v2.1.0 · Now Available</span>
+        <span>v2.2.0 · Now Available</span>
       </div>
 
       <h1 class="hero-title" id="heroTitle">
