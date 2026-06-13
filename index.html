@@ -45,7 +45,7 @@
        RESET & BASE
     ============================================= */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: var(--bg); }
+    html { scroll-behavior: smooth; background: var(--bg); overflow-x: hidden; }
     body {
       background: var(--bg);
       color: var(--white);
@@ -191,6 +191,7 @@
       display: flex; flex-direction: column; justify-content: center;
       padding: 60px 60px 80px 64px;
       position: relative; z-index: 2;
+      min-width: 0;
     }
 
     .hero-eyebrow {
@@ -224,6 +225,7 @@
       letter-spacing: -0.04em;
       margin-bottom: 28px;
       overflow: hidden;
+      min-width: 0;
     }
     .hero-title .line {
       display: block;
@@ -748,27 +750,29 @@
       #cursor, #cursor-ring { display: none !important; }
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-left { 
-        padding: 100px 20px 40px !important; 
-        align-items: center !important; 
-        text-align: center !important; 
+        padding: 100px 16px 40px !important; 
+        align-items: flex-start !important; 
+        text-align: left !important; 
       }
-      .hero-eyebrow { margin: 0 auto 24px !important; }
+      .hero-eyebrow { margin: 0 0 24px !important; }
       .hero-title { 
-        font-size: clamp(1.8rem, 6.5vw, 3rem) !important; 
+        font-size: clamp(1.7rem, 6vw, 2.4rem) !important; 
         overflow: visible !important; 
+        text-align: left !important;
       }
       .hero-title .line { overflow: visible !important; }
       .hero-sub { 
-        margin-left: auto !important; 
-        margin-right: auto !important; 
-        text-align: center !important;
-        font-size: 1rem !important;
+        margin-left: 0 !important; 
+        margin-right: 0 !important; 
+        text-align: left !important;
+        font-size: 0.95rem !important;
+        max-width: 100% !important;
       }
       .hero-actions { 
         width: 100% !important; 
-        justify-content: center !important; 
+        justify-content: flex-start !important; 
         flex-direction: column !important;
-        align-items: center !important;
+        align-items: flex-start !important;
         gap: 12px !important; 
       }
       .hero-actions .btn {
@@ -776,10 +780,10 @@
         max-width: 320px;
       }
       .hero-pills { 
-        justify-content: center !important; 
+        justify-content: flex-start !important; 
         gap: 8px !important; 
-        max-width: 440px; 
-        margin: 0 auto !important; 
+        margin: 0 !important; 
+        width: 100% !important;
       }
       .pill { font-size: 0.75rem !important; padding: 5px 12px !important; }
       
@@ -807,13 +811,41 @@
       .nav-cta { padding: 8px 14px; font-size: 0px !important; }
       .nav-cta i { font-size: 0.85rem !important; margin-right: 0 !important; }
       
-      .hero-left { padding: 100px 16px 36px; align-items: center; text-align: center; }
-      .hero-eyebrow { margin: 0 auto 24px; }
-      .hero-title { font-size: clamp(1.5rem, 7.5vw, 2.4rem) !important; overflow: visible !important; }
+      .hero-left { 
+        padding: 100px 16px 36px !important; 
+        align-items: flex-start !important; 
+        text-align: left !important; 
+      }
+      .hero-eyebrow { margin: 0 0 24px !important; }
+      .hero-title { 
+        font-size: clamp(1.3rem, 6vw, 1.8rem) !important; 
+        overflow: visible !important; 
+        text-align: left !important;
+      }
       .hero-title .line { overflow: visible !important; }
-      .hero-sub { margin-left: auto; margin-right: auto; }
-      .hero-actions { width: 100%; justify-content: center; gap: 12px; }
-      .hero-pills { justify-content: center; gap: 6px !important; max-width: 340px; margin: 0 auto; }
+      .hero-sub { 
+        margin-left: 0 !important; 
+        margin-right: 0 !important; 
+        text-align: left !important;
+        max-width: 100% !important;
+      }
+      .hero-actions { 
+        width: 100% !important; 
+        justify-content: flex-start !important; 
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important; 
+      }
+      .hero-actions .btn {
+        width: 100% !important;
+        max-width: 320px;
+      }
+      .hero-pills { 
+        justify-content: flex-start !important; 
+        gap: 6px !important; 
+        margin: 0 !important; 
+        width: 100% !important;
+      }
       .pill { font-size: 0.72rem !important; padding: 5px 10px !important; }
       
       .hero-right { padding: 16px 0; min-height: 480px; }
