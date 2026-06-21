@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="website/images/logo.svg" alt="VibeStream Logo" width="120" height="120" />
+  <img src="images/logo.svg" alt="VibeStream Logo" width="120" height="120" />
 </p>
 
 <h1 align="center">🚀 VibeStream</h1>
@@ -62,16 +62,16 @@ It is accompanied by a custom, hardware-accelerated **3D Parallax Marketing Webs
 ### 🌐 Web Landing Page & Console
 An interactive responsive layout featuring dual-element cursor parallax tracking, scroll-triggered frame transitions, and direct Firebase integration.
 <p align="center">
-  <img src="website/images/webpage.png" alt="VibeStream Web Landing Page" width="850" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.3);" />
+  <img src="images/webpage.png" alt="VibeStream Web Landing Page" width="850" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.3);" />
 </p>
 
 ### 📱 Android Mobile App Interface
 Featuring a sleek Material 3 dark-themed UI, vinyl player rotations, waveform overlays, and social session hubs.
 <p align="center">
-  <img src="website/images/app.jpeg" alt="App Overview" width="220" style="border-radius: 14px;" /> &nbsp; &nbsp;
-  <img src="website/images/screen_home.webp" alt="App Home Screen" width="220" style="border-radius: 14px;" /> &nbsp; &nbsp;
-  <img src="website/images/screen_player.webp" alt="App Waveform Player" width="220" style="border-radius: 14px;" /> &nbsp; &nbsp;
-  <img src="website/images/screen_library.webp" alt="App Downloads Library" width="220" style="border-radius: 14px;" />
+  <img src="images/app.jpeg" alt="App Overview" width="220" style="border-radius: 14px;" /> &nbsp; &nbsp;
+  <img src="images/screen_home.webp" alt="App Home Screen" width="220" style="border-radius: 14px;" /> &nbsp; &nbsp;
+  <img src="images/screen_player.webp" alt="App Waveform Player" width="220" style="border-radius: 14px;" /> &nbsp; &nbsp;
+  <img src="images/screen_library.webp" alt="App Downloads Library" width="220" style="border-radius: 14px;" />
 </p>
 
 ---
@@ -113,7 +113,7 @@ Featuring a sleek Material 3 dark-themed UI, vinyl player rotations, waveform ov
 
 * **Secured Credentials:** Release keys are kept completely out of the codebase and loaded dynamically from git-ignored local property sheets.
 * **Input Sanitization:** Web inputs are escaped to eliminate XSS injections and bounded to prevent overflow attacks. Android fields restrict inputs to a maximum of 40 characters.
-* **Rate Limiting:** Form submissions are rate-limited via client-side timestamp storage (max 5 requests per 15 mins) to prevent endpoint exhaustion.
+* **Rate Limiting:** Form submissions are rate-limited via client-site timestamp storage (max 5 requests per 15 mins) to prevent endpoint exhaustion.
 
 ---
 
